@@ -1,0 +1,22 @@
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.db
+*.sqlite
+*.sqlite3
+.pytest_cache/
+.coverage
+dist/
+build/
+node_modules/
+.DS_Store
+
+# Local database and code backups
+backups/
+*.bak
+*.log
+*.before-*

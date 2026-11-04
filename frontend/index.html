@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#10101b">
+<title>AdBot Mining Network</title>
+<link rel="stylesheet" href="/assets/css/app.css">
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="brand"><span class="logo">⛏</span><div><b>AdBot Mining</b><small>NETWORK</small></div></div>
+    <div class="status"><i></i> Connected</div>
+  </header>
+
+  <main>
+    <section id="dashboard" class="page active">
+      <div class="welcome"><small>MINING NETWORK</small><h1>Welcome, <span id="username">Miner</span></h1><p>Your activity. Your rewards. Your network.</p></div>
+      <div class="balance-card">
+        <small>AVAILABLE BALANCE</small>
+        <div class="amount" id="available">$0.00</div>
+        <div class="balance-bottom"><span>Minimum withdrawal: $2.00</span><span id="network">TON</span></div>
+      </div>
+      <div class="stats">
+        <div class="stat"><small>Pending</small><b id="pending">$0.00</b></div>
+        <div class="stat"><small>Reserved</small><b id="reserved">$0.00</b></div>
+        <div class="stat"><small>Paid</small><b id="paid">$0.00</b></div>
+      </div>
+      <div class="section-head"><h2>Quick actions</h2></div>
+      <div class="quick">
+        <button data-page="tasks"><span>▦</span>Find tasks</button>
+        <button data-page="wallet"><span>↗</span>Withdraw</button>
+        <button data-page="referrals"><span>♧</span>Invite friends</button>
+      </div>
+      <div class="section-head"><h2>Account</h2></div>
+      <div class="panel" id="accountInfo">Loading account...</div>
+    </section>
+
+    <section id="tasks" class="page">
+      <div class="page-heading"><small>OPPORTUNITIES</small><h1>Task marketplace</h1><p>Complete eligible tasks and submit your work for review.</p></div>
+      <div id="taskList" class="stack"><div class="panel">Loading tasks...</div></div>
+    </section>
+
+    <section id="earnings" class="page">
+      <div class="page-heading"><small>YOUR ACTIVITY</small><h1>Earnings</h1><p>Review your wallet transactions and task submissions.</p></div>
+      <div class="stats">
+        <div class="stat"><small>Available</small><b id="earnAvailable">$0.00</b></div>
+        <div class="stat"><small>Pending</small><b id="earnPending">$0.00</b></div>
+      </div>
+      <h2>Transactions</h2>
+      <div id="transactions" class="stack"><div class="panel">Loading transactions...</div></div>
+      <h2>My submissions</h2>
+      <div id="submissions" class="stack"><div class="panel">Loading submissions...</div></div>
+    </section>
+
+    <section id="referrals" class="page">
+      <div class="page-heading"><small>GROW YOUR NETWORK</small><h1>Referrals</h1><p>Invite people and track eligible referral rewards.</p></div>
+      <div class="balance-card"><small>REFERRAL SUMMARY</small><div class="amount" id="referralCount">0</div><div class="balance-bottom"><span>Registered referrals</span></div></div>
+      <div id="referralInfo" class="panel">Loading referral information...</div>
+      <button class="primary" id="shareInvite">Share invitation</button>
+    </section>
+
+    <section id="wallet" class="page">
+      <div class="page-heading"><small>TON PAYOUTS</small><h1>Withdraw funds</h1><p>Request a withdrawal to your TON wallet. Minimum $2.00.</p></div>
+      <div class="panel">
+        <label>Amount in USD</label>
+        <input id="withdrawAmount" type="number" min="2" step="0.01" placeholder="2.00">
+        <label>TON wallet address</label>
+        <input id="tonAddress" type="text" maxlength="66" placeholder="Your public TON wallet address">
+        <p class="hint">Only enter your public wallet address. Never enter your recovery phrase or private key.</p>
+        <button class="primary" id="withdrawButton">Request withdrawal</button>
+        <div id="withdrawMessage" class="message"></div>
+      </div>
+      <h2>Withdrawal history</h2>
+      <div id="withdrawals" class="stack"><div class="panel">Loading withdrawals...</div></div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav">
+    <button class="nav active" data-page="dashboard"><span>⌂</span>Home</button>
+    <button class="nav" data-page="tasks"><span>▦</span>Tasks</button>
+    <button class="nav" data-page="earnings"><span>◷</span>Earnings</button>
+    <button class="nav" data-page="referrals"><span>♧</span>Referrals</button>
+    <button class="nav" data-page="wallet"><span>◈</span>Wallet</button>
+  </nav>
+</div>
+<div id="toast" class="toast"></div>
+<script src="/assets/js/app.js"></script>
+</body>
+</html>
